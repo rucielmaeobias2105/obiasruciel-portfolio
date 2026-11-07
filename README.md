@@ -1,58 +1,135 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Ruciel Mae Obias — Personal Portfolio
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A personal e-portfolio website for **Ruciel Mae Obias**, a Bachelor of Science in Computer Science student. The site presents her profile, academic background, certificates, work experience, and programming projects in a single responsive page.
 
-## About Laravel
+> **Note:** Although this repository includes some Laravel/Boost tooling configuration files, the portfolio itself is a **static front-end website** built with HTML, CSS, vanilla JavaScript, and Vite. There is no Laravel application, PHP backend, database, or Composer setup in this repository.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Overview
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+The portfolio is designed as a clean, cream-and-gold themed single-page site with smooth scrolling, section reveal animations, and interactive image viewers. It contains the following sections:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Home** — Name, degree, profile picture, and quick links to projects and contact.
+- **About** — Short bio, core strengths, and buttons to view the resume and Personal Data Sheet (PDS) in an embedded document viewer.
+- **Education** — Academic history, including college and senior high school background.
+- **Certificates** — Horizontally scrollable certificate slider with a full-screen viewer that supports previous/next navigation, zoom, drag-to-pan, and keyboard controls.
+- **Work Experience** — Roles and internships with descriptions.
+- **Projects** — Project cards with screenshot galleries, descriptions, technology tags, GitHub repository links, and live site links where available. A "See more projects" toggle reveals additional academic projects.
+- **Contact** — Location, email, phone, GitHub, Facebook, and a message form.
+- **Footer** — Contact summary, profile image, and copyright.
 
-## Learning Laravel
+The site also includes a scroll-to-top button, an active navigation indicator based on scroll position, and a responsive mobile navigation menu.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Featured Projects
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+The project section highlights both web and academic projects, including:
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+- **Balai ti Arjud Online Appointment and Inventory System** — PHP and MySQL web system with GitHub and live site links.
+- **Boarding House System Management** — VB.NET and SQL Server desktop system.
+- **Online Ordering & Reservation System for MCA Cafe** — Laravel and MySQL system.
+- **Personal Portfolio Website** — HTML, CSS, and JavaScript.
+- Additional academic projects built with Java, Python, C#, VB.NET, MS Access, and SQL Server.
 
-## Agentic Development
+Each project card can open a lightbox gallery with screenshots and a description.
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## Technologies Used
 
-```bash
-composer require laravel/boost --dev
+These are the technologies actually used by the current codebase:
 
-php artisan boost:install
+| Technology | Usage |
+| --- | --- |
+| **HTML5** | Page structure and content in `index.html` |
+| **CSS3** | Styling, theming variables, responsive layout, animations in `src/css/app.css` |
+| **JavaScript (vanilla)** | Navigation, scrollspy, lightbox, certificate viewer, zoom/pan, file viewer, project toggle in `src/js/app.js` |
+| **Vite 8** | Development server and production build |
+| **Font Awesome 6.5.2** | Icons, loaded via CDN |
+| **Vercel** | Deployment configuration in `vercel.json` |
+| **Apache `.htaccess`** | Optional local XAMPP/Apache asset routing |
+
+No front-end framework (React, Vue, etc.), CSS framework, or backend framework is used.
+
+## Project Structure
+
+```text
+obias_portfolio/
+├── index.html              # Main portfolio page (all sections and modals)
+├── src/
+│   ├── css/
+│   │   └── app.css         # Theme, layout, responsive styles, animations
+│   └── js/
+│       └── app.js          # Navigation, lightbox, modals, zoom, project toggle
+├── public/                 # Static assets served at the site root
+│   ├── profile/            # Profile photo and favicon
+│   ├── cert_img/           # Certificate images
+│   ├── projects/           # Project screenshots
+│   ├── files/              # Resume and Personal Data Sheet PDFs
+│   ├── LOGO/               # Technology logos
+│   └── *.pdf               # Additional certificate/document PDFs
+├── dist/                   # Production build output (generated)
+├── vite.config.js          # Vite configuration
+├── vercel.json             # Vercel deployment configuration
+├── package.json            # Scripts and dev dependency (Vite)
+└── .htaccess               # Apache rewrite rules for local XAMPP use
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### Relevant files
 
-## Contributing
+- `index.html` — Contains every visible section, the certificate modal, project lightbox, and document viewer markup.
+- `src/css/app.css` — Defines the cream/beige/gold color palette, typography, responsive breakpoints, and all component styles.
+- `src/js/app.js` — Handles mobile navigation, smooth scrolling, scrollspy, section reveals, certificate slider and viewer, project galleries, resume/PDS viewer, and the "See more projects" toggle.
+- `public/` — All images and PDFs referenced by the page. Vite serves this folder at the site root during development and copies it into `dist/` during builds.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Running the Project Locally
 
-## Code of Conduct
+### Prerequisites
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- [Node.js](https://nodejs.org/) and npm
 
-## Security Vulnerabilities
+### Setup
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Install dependencies:
 
-## License
+   ```bash
+   npm install
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2. Start the Vite development server:
+
+   ```bash
+   npm run dev
+   ```
+
+3. Open the local URL printed by Vite (typically `http://localhost:5173`).
+
+### Production build
+
+```bash
+npm run build
+```
+
+The optimized site is generated in `dist/`. To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+### Running with XAMPP/Apache
+
+The included `.htaccess` maps asset folders such as `profile/`, `cert_img/`, `projects/`, `files/`, and `LOGO/` to `public/`. When serving the repository root through Apache (for example, `http://localhost/obias_portfolio/`), these rewrites allow the root `index.html` to load assets from `public/`.
+
+## Deployment
+
+The project is configured for deployment on **Vercel** via `vercel.json`:
+
+- Framework: Vite
+- Install command: `npm install`
+- Build command: `npm run build`
+- Output directory: `dist`
+
+Because the site is fully static, the built `dist/` folder can also be hosted on any static web host or Apache server.
+
+## Notes and Limitations
+
+- The contact form is **front-end only** (`onsubmit="return false;"`). It does not send messages to a server or email service.
+- The site uses a single gold accent theme. The CSS includes theme variable hooks, but no light/dark or accent-switching UI is wired up in the current page.
+- All portfolio content — bio, education, experience, certificates, and projects — is currently hard-coded in `index.html`.
+- To update content, edit `index.html`; to add project or certificate images, place them under the appropriate folder in `public/`.
