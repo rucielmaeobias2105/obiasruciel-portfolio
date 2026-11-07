@@ -3,9 +3,12 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "predev": "npm run render",
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "render": "php scripts/render.php",
+        "build:blade": "npm run render && vite build"
     },
     "devDependencies": {
         "vite": "^8.0.0"

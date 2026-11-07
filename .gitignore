@@ -13,6 +13,11 @@
 *.log
 .DS_Store
 
+# PHP / Blade build dependencies
+/vendor
+/storage/framework/views/*
+!/storage/framework/views/.gitkeep
+
 # Local tooling
 .vercel
 .idea

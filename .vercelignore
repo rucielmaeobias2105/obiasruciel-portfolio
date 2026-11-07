@@ -1,0 +1,8 @@
+# Blade source and PHP build dependencies are not needed for the static Vercel build.
+/vendor
+/storage
+/resources
+/scripts
+/composer.json
+/composer.lock
+/obias_portfolio
